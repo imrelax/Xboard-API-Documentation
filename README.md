@@ -187,6 +187,50 @@ This document provides a comprehensive overview of all API endpoints available i
 
 **Endpoint**: `GET /api/v1/user/order/getPaymentMethod`
 - **Purpose**: Get available payment methods
+- **Returns**: Available payment options
+- **Data**: Payment method list and configuration
+
+**Endpoint**: `GET /api/v1/user/checkLogin`
+- **Purpose**: Check login status
+- **Returns**: Login status and permissions
+- **Data**: Login status, admin privileges
+
+**Endpoint**: `GET /api/v1/user/getStat`
+- **Purpose**: Get user statistics
+- **Returns**: User statistics summary
+- **Data**: Pending orders count, open tickets count, invited users count
+
+**Endpoint**: `GET /api/v1/user/getSubscribe`
+- **Purpose**: Get subscription information
+- **Returns**: Subscription details and URL
+- **Data**: Plan details, subscription URL, usage stats, reset schedule
+
+**Endpoint**: `POST /api/v1/user/transfer`
+- **Purpose**: Transfer commission to balance
+- **Returns**: Transfer status
+- **Data**: Transfer confirmation and updated balances
+
+**Endpoint**: `POST /api/v1/user/getQuickLoginUrl`
+- **Purpose**: Generate quick login URL
+- **Returns**: Quick login URL
+- **Data**: Temporary login URL
+
+### 💻 Session Management
+
+
+
+
+
+### 💻 Session Management
+**Endpoint**: `GET /api/v1/user/getActiveSession`
+- **Purpose**: Get active sessions
+- **Returns**: List of active sessions
+- **Data**: Session details, login times, IP addresses
+
+**Endpoint**: `POST /api/v1/user/removeActiveSession`
+- **Purpose**: Remove specific session
+- **Returns**: Session removal status
+- **Data**: Session termination confirmation
 - **Returns**: Payment method options
 - **Data**: Available payment processors and methods
 
