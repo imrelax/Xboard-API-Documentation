@@ -3,68 +3,63 @@
 This document provides a comprehensive overview of all API endpoints available in the Xboard system, organized by access level.
 
 ## API Base URLs
-- V1 API: /api/v1/
-- V2 API: /api/v2/
+- **V1 API**: `/api/v1/`
+- **V2 API**: `/api/v2/`
+
 ## Authentication
-- Guest: No authentication required
-- User: Requires user authentication (user middleware)
-- Staff: Requires staff privileges (staff middleware)
-- Admin: Requires admin privileges (admin middleware)
-- Client: Requires client authentication (client middleware)
-- Server: Requires server authentication (server middleware)
+- **Guest**: No authentication required
+- **User**: Requires user authentication (user middleware)
+- **Staff**: Requires staff privileges (staff middleware)
+- **Admin**: Requires admin privileges (admin middleware)
+- **Client**: Requires client authentication (client middleware)
+- **Server**: Requires server authentication (server middleware)
 ## 🌐 Guest APIs (Public - No Authentication Required)
-### Plans
-GET /api/v1/guest/plan/fetch
-Purpose: Get all available subscription plans for public viewing
-Returns: List of available plans with pricing, features, and limits
-Data: Plan ID, name, prices (monthly/quarterly/yearly), transfer limits, speed limits, device limits, capacity info
-### Configuration
-GET /api/v1/guest/comm/config
-Purpose: Get public configuration settings
-Returns: Public app configuration
-Data: ToS URL, email verification settings, invite requirements, reCAPTCHA settings, app description, app URL, logo
-### Payment Webhooks
-GET/POST /api/v1/guest/payment/notify/{method}/{uuid}
-Purpose: Handle payment notifications from payment providers
-Returns: Payment processing status
-Data: Payment confirmation and processing results
-### Telegram Webhooks
-POST /api/v1/guest/telegram/webhook
-Purpose: Handle Telegram bot webhook events
-Returns: Webhook processing status
-Data: Telegram bot event processing results
+### 📋 Plans
+**GET** `/api/v1/guest/plan/fetch`
+- **Purpose**: Get all available subscription plans for public viewing
+- **Returns**: List of available plans with pricing, features, and limits
+- **Data**: Plan ID, name, prices (monthly/quarterly/yearly), transfer limits, speed limits, device limits, capacity info
+### ⚙️ Configuration
+**GET** `/api/v1/guest/comm/config`
+- **Purpose**: Get public configuration settings
+- **Returns**: Public app configuration
+- **Data**: ToS URL, email verification settings, invite requirements, reCAPTCHA settings, app description, app URL, logo
+### 💳 Payment Webhooks
+**GET/POST** `/api/v1/guest/payment/notify/{method}/{uuid}`
+- **Purpose**: Handle payment notifications from payment providers
+- **Returns**: Payment processing status
+- **Data**: Payment confirmation and processing results
+### 🤖 Telegram Webhooks
+**POST** `/api/v1/guest/telegram/webhook`
+- **Purpose**: Handle Telegram bot webhook events
+- **Returns**: Webhook processing status
+- **Data**: Telegram bot event processing results
 ## 🔐 Authentication APIs (Passport)
-### V1 Authentication
-POST /api/v1/passport/auth/register
-
-Purpose: User registration
-Returns: Registration success/failure
-Data: User account creation status
-POST /api/v1/passport/auth/login
-
-Purpose: User login
-Returns: Authentication token and user info
-Data: JWT token, user details, session info
-GET /api/v1/passport/auth/token2Login
-
-Purpose: Token-based login
-Returns: Login status
-Data: Authentication status
-POST /api/v1/passport/auth/forget
-
-Purpose: Password reset request
-Returns: Reset email status
-Data: Password reset confirmation
-POST /api/v1/passport/auth/getQuickLoginUrl
-
-Purpose: Generate quick login URL
-Returns: Quick login URL
-Data: Temporary login URL
-POST /api/v1/passport/auth/loginWithMailLink
-
-Purpose: Login via email link
-Returns: Login status
-Data: Authentication confirmation
+### 🔐 V1 Authentication
+**POST** `/api/v1/passport/auth/register`
+- **Purpose**: User registration
+- **Returns**: Registration success/failure
+- **Data**: User account creation status
+**POST** `/api/v1/passport/auth/login`
+- **Purpose**: User login
+- **Returns**: Authentication token and user info
+- **Data**: JWT token, user details, session info
+**GET** `/api/v1/passport/auth/token2Login`
+- **Purpose**: Token-based login
+- **Returns**: Login status
+- **Data**: Authentication status
+**POST** `/api/v1/passport/auth/forget`
+- **Purpose**: Password reset request
+- **Returns**: Reset email status
+- **Data**: Password reset confirmation
+**POST** `/api/v1/passport/auth/getQuickLoginUrl`
+- **Purpose**: Generate quick login URL
+- **Returns**: Quick login URL
+- **Data**: Temporary login URL
+**POST** `/api/v1/passport/auth/loginWithMailLink`
+- **Purpose**: Login with email link
+- **Returns**: Login status
+- **Data**: Authentication confirmation
 ### Communication
 POST /api/v1/passport/comm/sendEmailVerify
 
